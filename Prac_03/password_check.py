@@ -1,15 +1,17 @@
-def get_password():
-    global password
-    password = input('Enter password: ')
-    while len(password) <= 3:
-        password = input('Invalid password. Enter Password')
+def main():
+    password = get_password()
+    print_asterisk(password)
 
 
-get_password()
-
-
-def print_asterisk():
+def print_asterisk(password):
     print('*' * len(password))
 
 
-print_asterisk()
+def get_password():
+    password = input('Enter password: ')
+    while len(password) <= 3:
+        password = input('Invalid password. Enter password: ')
+    return password
+
+
+main()
