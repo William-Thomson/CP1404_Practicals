@@ -6,19 +6,18 @@ Broken program to determine score status
 
 def main():
     score = float(input("Enter score: "))
-    print(grade(score))
+    print(determine_grade(score))
 
 
-def grade(score):
+def determine_grade(score):
     if score < 0 or score > 100:
-        grade_name = "Invalid score"
+        return "Invalid score"
     elif score >= 90:
-        grade_name = "Excellent"
+        return "Excellent"
     elif score >= 50:
-        grade_name = "Passable"
+        return "Passable"
     else:
-        grade_name = "Bad"
-    return grade_name
+        return "Bad"
 
 
 main()
