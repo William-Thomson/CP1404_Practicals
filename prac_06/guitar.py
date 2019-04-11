@@ -12,11 +12,12 @@ class Guitar:
 
     def __str__(self):
         """returns a string of object values"""
-        return "{} ({}) : {}".format(self.name, self.year, self.cost)
+        return "{} ({}) : ${:.2f}".format(self.name, self.year, self.cost)
 
     def get_age(self):
         """determines the age of the guitar"""
         return CURRENT_YEAR - self.year
 
     def is_vintage(self):
+        """Determines if guitar is vintage"""
         return self.get_age() >= VINTAGE_AGE
