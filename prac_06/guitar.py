@@ -1,6 +1,7 @@
 CURRENT_YEAR = 2019
 VINTAGE_AGE = 50
 
+
 class Guitar:
     """Guitar Class"""
 
