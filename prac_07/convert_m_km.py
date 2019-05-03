@@ -13,13 +13,22 @@ class MilesToKilometreApp(App):
 
     def handle_increment(self, change):
         """Increases/decreases text input number by one."""
-        value = float(self.root.ids.input_miles.text) + change
+        value = self.is_valid_input() + change
         self.root.ids.input_miles.text = str(value)
 
     def handle_calculate(self):
         """Converts from miles to km and prints"""
-        value = float(self.root.ids.input_miles.text) * MILES_TO_KM
+        value = self.is_valid_input() * MILES_TO_KM
         self.root.ids.output_label.text = str(value)
+
+    def is_valid_input(self):
+        """Converts input text to float.
+        If there is a ValueError, returns 0."""
+        try:
+            value = float(self.root.ids.input_miles.text)
+            return value
+        except ValueError:
+            return 0
 
 
 MilesToKilometreApp().run()
