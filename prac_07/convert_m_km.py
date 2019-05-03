@@ -15,6 +15,7 @@ class MilesToKilometreApp(App):
         """Increases/decreases text input number by one."""
         value = self.is_valid_input() + change
         self.root.ids.input_miles.text = str(value)
+        self.handle_calculate()
 
     def handle_calculate(self):
         """Converts from miles to km and prints"""
