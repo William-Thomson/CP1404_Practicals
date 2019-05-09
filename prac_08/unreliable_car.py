@@ -20,10 +20,10 @@ class UnreliableCar(Car):
         return distance
 
 
-def main():
+def test_unreliable_car():
     new_car = UnreliableCar('Hyundai', 100, 80)
     new_car.drive(50)
     print(new_car)
 
 
-main()
+test_unreliable_car()
