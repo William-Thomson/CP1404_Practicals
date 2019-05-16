@@ -14,10 +14,10 @@ class UnreliableCar(Car):
 
     def drive(self, distance):
         if self.reliability > randint(0, 100):
-            super().drive(distance)
+            distance_driven = super().drive(distance)
         else:
-            distance = 0
-        return distance
+            distance_driven = 0
+        return distance_driven
 
 
 def test_unreliable_car():
