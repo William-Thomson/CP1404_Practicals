@@ -37,4 +37,5 @@ def get_fixed_filename(filename):
                 print("{}{}".format(previous_character, current_character))
     return new_name
 
+
 main()
