@@ -16,7 +16,7 @@ def main():
                 os.mkdir(category)
             except FileExistsError:
                 pass
-        shutil.move(filename, category)
+        shutil.move(filename, extensions_to_category[extension])
 
 
 main()
