@@ -2,7 +2,7 @@
 CP1404/CP5632 Practical
 Demos of various os module examples
 """
-import shutil
+
 import os
 
 
@@ -25,16 +25,14 @@ def main():
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
-    new_name = filename
-    for i, current_character in enumerate(filename):
-        previous_character = filename[i - 1]
-        if current_character.isupper():
-            if previous_character.islower():
-                new_name = filename.replace("{}{}".format(previous_character, current_character),
-                                            "{}_{}".format(previous_character, current_character)).replace(" ",
-                                                                                                           "_").replace(
-                    ".TXT", ".txt")
-                print("{}{}".format(previous_character, current_character))
+    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
+    for i, current_character in enumerate(new_name):
+        previous_character = new_name[i - 1]
+        if current_character.isupper() and previous_character.islower():
+            new_name = new_name.replace("{}{}".format(previous_character, current_character),
+                                        "{}_{}".format(previous_character, current_character))
+            print(previous_character, current_character)
+        print(filename, new_name)
     return new_name
 
 
